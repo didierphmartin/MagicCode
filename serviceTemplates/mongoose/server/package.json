@@ -1,0 +1,15 @@
+{
+  "name": "{{service.name}}",
+  "version": "1.0.0",
+  "description": "Server generated with MagicCode Generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "magic Code Generator",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mongoose": "^4.9.7"
+  }
+}

@@ -1,0 +1,105 @@
+{
+    "name": "magic",
+    "displayName": "Magic Code Generator",
+    "description": "generate code from data models",
+    "version": "0.10.5",
+    "publisher": "Netfolder",
+    "galleryBanner": {
+        "color": "#425df4",
+        "theme": "dark"
+    },
+    "license": "SEE LICENSE IN LICENSE.md",
+    "engines": {
+        "vscode": "^1.11.0"
+    },
+    "icon": "media/logo.png",
+    "keywords": [
+        "Code generation",
+        "model driven",
+        "micro service",
+        "mongoose",
+        "nativescript"
+    ],
+    "categories": [
+        "Other",
+        "Snippets",
+        "Languages"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/didierphmartin/MagicCode/"
+    },
+    "activationEvents": [
+        "onCommand:extension.magicCode"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "languages": [
+            {
+                "id": "magicCode",
+                "extensions": [
+                    ".mdl"
+                ],
+                "aliases": [
+                    "magic"
+                ],
+                "filenames": []
+            }
+        ],
+        "commands": [
+            {
+                "command": "extension.magicCode",
+                "title": "magic code generator",
+                "icon": {
+                    "light": "media/head.svg",
+                    "dark": "media/head.svg"
+                }
+            }
+        ],
+        "menus": {
+            "editor/title": [
+                {
+                    "when": "resourceLangId == magicCode",
+                    "command": "extension.magicCode"
+                }
+            ],
+            "explorer/context": [
+                {
+                    "when": "resourceLangId == magicCode",
+                    "command": "extension.magicCode"
+                }
+            ]
+        },
+        "snippets": [
+            {
+                "language": "magicCode",
+                "path": "./snippets/magicCode.json"
+            }
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.0.3",
+        "vscode": "^1.0.0",
+        "mocha": "^2.3.3",
+        "@types/node": "^6.0.40",
+        "@types/mocha": "^2.2.32"
+    },
+    "dependencies": {
+        "es6-module-loader": "^0.17.11",
+        "handlebars": "^4.0.6",
+        "q": "^1.4.1",
+        "shelljs": "^0.7.7",
+        "traceur": "0.0.111",
+        "underscore": "^1.8.3",
+        "vscode": "^1.1.0"
+    },
+    "__metadata": {
+        "id": "6a7799f8-6d9a-4c75-bf81-78a9a5bd8730",
+        "publisherId": "88d64f61-fd8b-42c6-bf50-f1dfb88c7d2d",
+        "publisherDisplayName": "netfolder"
+    }
+}
